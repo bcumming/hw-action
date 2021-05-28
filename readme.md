@@ -24,5 +24,5 @@ The time of the friendly social gesture.
 ```yaml
 uses: actions/hello-world-docker-action@v1
 with:
-  who-to-greet: 'Garry from Goodiwindi'
+  who-to-greet: 'Garry from Goondiwindi'
 ```
