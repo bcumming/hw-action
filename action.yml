@@ -2,7 +2,7 @@
 name: 'hello world'
 description: 'say g''day and record the time'
 inputs:
-  who-to-great:
+  who-to-greet:
     description: 'the welcome individual'
     required: true
     default: 'mate'
