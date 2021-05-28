@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+sudo apk -U add git
+
 echo '---------------- ls ----------------'
 ls
 echo '---------------- pwd ---------------'
@@ -17,13 +19,13 @@ echo '---------------- say hello ----------'
 echo "hello $1"
 
 
-echo '--- CLONE and CHECKOUT ${GITHUB_REPOSITORY}@${GITHUB_SHA} ---'
+echo --- CLONE and CHECKOUT ${GITHUB_REPOSITORY}@${GITHUB_SHA} ---
 base_path=`pwd`/repo
 git clone https://github.com/${GITHUB_REPOSITORY}.git repo --recursive
 cd "${base_path}"
 git fetch
 git checkout ${GITHUB_SHA}
-echo '-------------------------------------------------------------'
+echo -------------------------------------------------------------
 
 time=$(date)
 echo "::set-output name=time::$time"
