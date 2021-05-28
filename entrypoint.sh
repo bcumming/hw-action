@@ -13,7 +13,18 @@ ls /github/workflow
 echo '---------------- /github/workspace --'
 ls /github/workspace
 
+echo '---------------- say hello ----------'
 echo "hello $1"
+
+
+echo '--- CLONE and CHECKOUT ${GITHUB_REPOSITORY}@${GITHUB_SHA} ---'
+base_path=`pwd`/repo
+git clone https://github.com/${GITHUB_REPOSITORY}.git repo --recursive
+cd "${base_path}"
+git fetch
+git checkout ${GITHUB_SHA}
+echo '-------------------------------------------------------------'
+
 time=$(date)
 echo "::set-output name=time::$time"
 
