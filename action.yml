@@ -1,0 +1,16 @@
+# action.yml
+name: 'hello world'
+description: 'say g''day and record the time'
+inputs:
+  who-to-great:
+    description: 'the welcome individual'
+    required: true
+    default: 'mate'
+outputs:
+  time:
+    description: 'when it went down'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
